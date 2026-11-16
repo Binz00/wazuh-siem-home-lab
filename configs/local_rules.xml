@@ -1,0 +1,10 @@
+<!-- /var/ossec/etc/rules/local_rules.xml (Wazuh manager) -->
+<!-- Custom detection: escalate fake-user SSH attempts from the lab attacker IP -->
+<group name="local,sshd,">
+  <rule id="100010" level="10">
+    <if_sid>5710</if_sid>
+    <srcip>192.168.64.1</srcip>
+    <description>LAB: SSH login attempt with fake user from known attacker machine</description>
+    <mitre><id>T1110</id></mitre>
+  </rule>
+</group>
